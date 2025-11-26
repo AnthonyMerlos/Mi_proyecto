@@ -27,11 +27,48 @@ function cargar(seccion) {
             break;
 
         case "Videos":
-            html = "<h1>Historial</h1><p>Estos son los videos que has visto.</p>";
+            html = "";
+            html += `<nav class="contenedor3"></nav>`;
+            html += `<nav class="contenedor4"></nav>`;
+            html += `<div class="espaciador"></div>`;
+            html += `<iframe class="videYT" width="560" height="315" 
+            src="https://www.youtube.com/embed/JBCDIsM-Fks" 
+            frameborder="0" allowfullscreen controls></iframe>`;
+
+            case "Videos":
+    html = "";
+    html += `<nav class="contenedor3"></nav>`;
+    html += `<nav class="contenedor4"></nav>`;
+    html += `<div class="espaciador"></div>`;
+    html += `
+        <iframe class="videYT" width="560" height="315"
+        src="https://www.youtube.com/embed/JBCDIsM-Fks"
+        frameborder="0" allowfullscreen></iframe>
+
+        <button id="likeBtn" class="like">👍 Like <span id="count">0</span></button>
+    `;
+
+    setTimeout(() => {
+    let likes = localStorage.getItem("likesVideo") || 0;
+    document.getElementById("count").innerText = likes;
+
+    document.getElementById("likeBtn").onclick = function() {
+        likes++;
+        document.getElementById("count").innerText = likes;
+        localStorage.setItem("likesVideo", likes);
+    };
+}, 100);
+
+break;
+
+
+
+
+
             break;
 
-    case "Cerrar Sesion":
-    html = `<div class="contenedor2"></div>
+        case "Cerrar Sesion":
+            html = `<div class="contenedor2"></div>
             <header>
                 <button class="boton" onclick="if(confirm('¿Desea Salir de la cuenta?')) { localStorage.removeItem('usuario'); location.replace('https://www.google.com/'); }">
                     Salir
@@ -39,9 +76,7 @@ function cargar(seccion) {
             </header>`;
 
             html += '<p class="cerrar">Desea Cerrar Sesión</p>'
-    break;
-
-
+            break;
 
         case "doc1":
             html = "<h1>Documento 1</h1><p>Contenido del documento 1.</p>";

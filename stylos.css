@@ -103,9 +103,9 @@ body{
 
 body, html{
     margin: 0;
-    padding-left: 0;
+    padding-left: 0;                                    
     height: 100%;
-    overflow: hidden;
+  
 
 }
 video.fondo{
@@ -254,4 +254,56 @@ color: blue;
     z-index: 1;
     top: 300px;
     font-size: 50px;
+}
+
+
+
+
+.contenedor3{
+width:950px;
+height: 600px;
+background:#585858bd;
+color:#fff;
+border-radius:15px;
+padding:40px 30px;
+box-sizing:border-box;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+position: absolute;
+top:-250px;
+left: 500px;
+}
+
+.contenedor4{
+width:950px;
+height: 600px;
+background:#585858bd;
+color:#fff;
+border-radius:15px;
+padding:40px 30px;
+box-sizing:border-box;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+position: absolute;
+top:410px;
+left: 500px;
+}
+
+.espaciador {
+    height: 1200px; 
+}
+.videYT{
+    position: absolute;
+    margin-top: -1420px;
+    margin-left: 555px;
+    height: 500px;
+    width: 800px;
+    
+}
+
+
+.like{
+    position: absolute;
+    margin-top: -910px;
+    margin-left: 1000px;
+    background-color: #585858bd;;
+    border: none;
 }
