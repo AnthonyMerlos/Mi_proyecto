@@ -6,25 +6,48 @@ function cargar(seccion) {
         case "Iniciar Sesion":
 
             html = `<nav class="contenedor"></nav>`;
-            html += `
+html += `
 <div class="login-box ingresando">
     <img src="img/Captura de pantalla_24-11-2025_154335_www.bing.com.jpeg" alt="login" width="80">
     <h1>Ingresando al Login</h1>
 
-     <form action="">
+    <form id="loginForm">
         <label for="username">Usuario</label>
         <input type="text" id="username" name="username" placeholder="Ingrese su usuario">
 
-       <label for="password">Contraseña</label>
-<input type="password" id="password" placeholder="Ingrese su contraseña">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
 
-<input type="submit" value="Login" class="entrar"
-onclick="if(password.value!=''){location.href='http://localhost/Mi_Crud-main/index.php'}">
-
+        <input type="submit" value="Login" class="entrar">
     </form>
-</div>`;
+</div>
+`;
+document.addEventListener('submit', function(e) {
+    if (e.target && e.target.id === 'loginForm') {
+        e.preventDefault();
 
-            break;
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+    
+        if (username === '' || password === '') {
+            alert('Por favor, ingrese usuario y contraseña');
+            return;
+        }
+
+     
+        if (username === 'Anthony' && password === '123') {
+          
+            window.location.href = 'http://localhost/Mi_Crud-main/index.php';
+        } else {
+           
+            alert('Usuario o Contraseña incorrectos.');
+            
+        }
+    }
+});
+
+         
+break;
 
         case "Videos":
             html = "";
