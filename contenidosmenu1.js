@@ -15,12 +15,12 @@ function cargar(seccion) {
         <label for="username">Usuario</label>
         <input type="text" id="username" name="username" placeholder="Ingrese su usuario">
 
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
-        <input type="submit" value="Login" class="entrar">
+       <label for="password">Contraseña</label>
+<input type="password" id="password" placeholder="Ingrese su contraseña">
 
-        <a href="#" class="olvido">¿Olvidó su contraseña?</a>
-        <a href="#" class="registrarse">¿No tiene cuenta?</a>
+<input type="submit" value="Login" class="entrar"
+onclick="if(password.value!=''){location.href='http://localhost/Mi_Crud-main/index.php'}">
+
     </form>
 </div>`;
 
@@ -35,12 +35,12 @@ function cargar(seccion) {
             src="https://www.youtube.com/embed/JBCDIsM-Fks" 
             frameborder="0" allowfullscreen controls></iframe>`;
 
-            case "Videos":
-    html = "";
-    html += `<nav class="contenedor3"></nav>`;
-    html += `<nav class="contenedor4"></nav>`;
-    html += `<div class="espaciador"></div>`;
-    html += `
+        case "Videos":
+            html = "";
+            html += `<nav class="contenedor3"></nav>`;
+            html += `<nav class="contenedor4"></nav>`;
+            html += `<div class="espaciador"></div>`;
+            html += `
         <iframe class="videYT" width="560" height="315"
         src="https://www.youtube.com/embed/JBCDIsM-Fks"
         frameborder="0" allowfullscreen></iframe>
@@ -48,18 +48,18 @@ function cargar(seccion) {
         <button id="likeBtn" class="like">👍 Like <span id="count">0</span></button>
     `;
 
-    setTimeout(() => {
-    let likes = localStorage.getItem("likesVideo") || 0;
-    document.getElementById("count").innerText = likes;
+            setTimeout(() => {
+                let likes = localStorage.getItem("likesVideo") || 0;
+                document.getElementById("count").innerText = likes;
 
-    document.getElementById("likeBtn").onclick = function() {
-        likes++;
-        document.getElementById("count").innerText = likes;
-        localStorage.setItem("likesVideo", likes);
-    };
-}, 100);
+                document.getElementById("likeBtn").onclick = function () {
+                    likes++;
+                    document.getElementById("count").innerText = likes;
+                    localStorage.setItem("likesVideo", likes);
+                };
+            }, 100);
 
-break;
+            break;
 
 
 
